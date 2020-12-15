@@ -6,8 +6,8 @@ def ingress():
             3. Exit ''')
   n=int(input("enter choice: "))
   if n==1:
-   name=input("Name")
-   GP_ID=input("ID")
+   name=input("Group Name")
+   GP_ID=input("Group ID")
    Port=input("Port")
    os.system('''aws ec2 authorize-security-group-ingress --group-name {} --group-id {} --protocol  tcp --port {} --cidr 0.0.0.0/0'''.format(name,GP_ID,Port))
   elif n==2:

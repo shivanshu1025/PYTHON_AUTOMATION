@@ -1,6 +1,8 @@
+import os
+import LINUX.DIR
 def linux():
         while True:
-            print(''' 1.  To Create Directory
+            print('''                  1.  To Create Directory
                   2.  To create file
                   3.  To set permissions on file
                   4.  To delete directory/file
@@ -16,22 +18,19 @@ def linux():
                   14. Exit''')
             x=int(input("enter The Choice: "))
             if x==1:
-                name=input("enter name for dir ")
-                path=input("enter path  ")
-                os.system("cd {}".format(path))
-                os.system("mkdir {}".format(name))
+             LINUX.DIR.cr()
             elif x==2:
                 name=input("enter name for file ")
                 path=input("enter path  ")
-                os.system("touch {}".format(name))
+                os.system("touch {}{}".format(path,name))
             elif x==3:
                 print("""4 --> read
-                     2 --> write
-                     1 --> execute""")
-                owner=input("Permissions for user ")
+2 --> write
+1 --> execute""")
+                owner=input("Permissions for user(4,2,1) ")
                 group=input("Permissions for group ")
                 other=input("Permissions for others ")
-                path=input("enter path of file ")
+                path=input("enter  filename with path ")
                 os.system("chmod {}{}{} {}".format(owner,group,other,path))
             elif x==4:
                 name=input("Enter file name with proper path ")
@@ -43,7 +42,7 @@ def linux():
                 os.system("setfacl -m u:{}:{} {}".format(user,per,file))
             elif x==6:
                 name=input("Group Name: ")
-                os.system("groupadd {}".format())
+                os.system("groupadd {}".format(name))
             elif x==7:
                 name=input("New Group Name ")
                 filename=input("Enter The File Name")
