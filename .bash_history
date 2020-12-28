@@ -76,3 +76,7 @@ vi AAACCC
 sudo vi AAACCC 
 sudo su -
 sudo su -
+sudo su -
+sudo su -
+cd /
+sudo su -
